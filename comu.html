@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>육아비법 커뮤니티</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <div class="logo">육아한입 커뮤니티</div>
+        <nav class="navbar">
+        </nav>
+    </header>
+
+    <!-- 게시글 작성 폼 -->
+    <section class="post-form">
+        <h2>육아비법을 나누어보세요!</h2>
+        <form id="postForm" onsubmit="submitPost(event)">
+            <input type="text" id="postTitle" placeholder="제목" required>
+            <textarea id="postContent" placeholder="내용을 입력하세요..." required></textarea>
+            <button type="submit">게시글 작성</button>
+        </form>
+    </section>
+
+    <!-- 게시글 목록 -->
+    <section class="posts">
+        <h2>최근 육아 비법</h2>
+        <div id="postsList" class="posts-list">
+            <!-- 게시글들이 여기에 동적으로 추가됩니다 -->
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 육아한입. 모든 권리 보유.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 게시글 목록을 저장할 배열
+        let posts = [];
+
+        // 게시글 작성 함수
+        function submitPost(event) {
+            event.preventDefault();
+
+            const title = document.getElementById("postTitle").value;
+            const content = document.getElementById("postContent").value;
+            const postId = posts.length + 1;
+
+            // 새로운 게시글 객체 생성
+            const newPost = {
+                id: postId,
+                title: title,
+                content: content,
+                comments: []
+            };
+
+            // 게시글 배열에 추가
+            posts.push(newPost);
+
+            // 게시글 목록을 다시 렌더링
+            renderPosts();
+
+            // 폼 초기화
+            document.getElementById("postForm").reset();
+        }
+
+        // 게시글 목록 렌더링 함수
+        function renderPosts() {
+            const postsList = document.getElementById("postsList");
+            postsList.innerHTML = ''; // 기존 목록 초기화
+
+            posts.forEach(post => {
+                const postElement = document.createElement("div");
+                postElement.classList.add("post");
+
+                postElement.innerHTML = `
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <button onclick="toggleComments(${post.id})">댓글 보기</button>
+                    <div id="comments-${post.id}" class="comments" style="display: none;">
+                        <input type="text" id="comment-${post.id}" placeholder="댓글 작성...">
+                        <button onclick="addComment(${post.id})">댓글 달기</button>
+                        <ul id="commentList-${post.id}">
+                            ${post.comments.map(comment => `<li>${comment}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+
+                postsList.appendChild(postElement);
+            });
+        }
+
+        // 댓글 보이기/숨기기 함수
+        function toggleComments(postId) {
+            const commentSection = document.getElementById(`comments-${postId}`);
+            commentSection.style.display = commentSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // 댓글 추가 함수
+        function addComment(postId) {
+            const commentInput = document.getElementById(`comment-${postId}`);
+            const commentText = commentInput.value.trim();
+
+            if (commentText) {
+                posts.forEach(post => {
+                    if (post.id === postId) {
+                        post.comments.push(commentText);
+                    }
+                });
+
+                // 댓글 목록을 다시 렌더링
+                renderPosts();
+                commentInput.value = ''; // 댓글 입력란 비우기
+            }
+        }
+    </script>
+</body>
+</html>
