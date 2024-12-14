@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>육아템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Jua&display=swap" rel="stylesheet">
+    
+
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+       
+    <nav class="navbar navbar-expand-md bg-dark navbar-Secondary fixed-top">
+        <div class="logo">육아한입</div>
+
+    <ul class="menu">
+           
+        <li class="menu-item">
+            <a href="index.html">홈</a>
+        </li>
+        <li class="menu-item">
+            <a href="sub.html">육아템</a>
+            <ul class="submenu">
+                <li><a href="#menu1">신생아 용품</a></li>
+                <li><a href="#menu2">생활용품</a></li>
+                <li><a href="#menu3">안전용품</a></li>
+                <li><a href="#menu4">놀이용품</a></li>
+                <li><a href="#menu5">부모용품</a></li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="comu.html">커뮤니티</a>
+        </li>
+    </ul>
+
+</nav>
+</header>
+
+
+    <!-- 항목 선택 버튼 -->
+    <div class="category-buttons">
+        <button onclick="scrollToCategory('menu1')">신생아용품</button>
+        <button onclick="scrollToCategory('menu2')">생활용품</button>
+        <button onclick="scrollToCategory('menu3')">안전용품</button>
+        <button onclick="scrollToCategory('menu4')">놀이용품</button>
+        <button onclick="scrollToCategory('menu5')">부모용품</button>
+    </div>
+
+    <a href="#top" class="top-btn" title="위로 가기">↑</a>
+
+    <!-- 육아템 추천 콘텐츠 -->
+    <main>
+        <section id="menu1" class="product-section">
+            <h1>신생아용품</h1>
+            <p>아기의 첫 번째 용품들을 준비하세요!</p>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/sub1.jpg" alt="기저귀" class="product-image">
+                    <h3>기저귀</h3>
+                    <p>아기 피부에 부드럽고 흡수력이 높은 기저귀입니다.</p>
+                    <p class="price">₩25,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank"
+                    class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/sub2.jpg" alt="아기 침대" class="product-image">
+                    <h3>아기 침대</h3>
+                    <p>편안하고 안전한 아기 침대입니다.</p>
+                    <p class="price">₩150,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" class="product-image">
+                    <h3>To be Continued...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu2" class="product-section">
+            <h1>생활용품</h1>
+            <p>육아에 필요한 다양한 생활용품들입니다.</p>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/sub3.jpg" alt="유아식기 세트" class="product-image">
+                    <h3>유아식기 세트</h3>
+                    <p>안전한 소재로 만든 유아식기 세트입니다.</p>
+                    <p class="price">₩18,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/sub4.jpg" alt="이유식 기계" class="product-image">
+                    <h3>이유식 기계</h3>
+                    <p>간편하게 이유식을 만들 수 있는 기계입니다.</p>
+                    <p class="price">₩80,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" class="product-image">
+                    <h3>To be Continued...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu3" class="product-section">
+            <h1>안전용품</h1>
+            <p>아기의 안전을 위한 필수 아이템들입니다.</p>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/sub5.jpg" alt="아기 안전 게이트" class="product-image">
+                    <h3>안전 게이트</h3>
+                    <p>집안에서 아기를 보호하는 안전 게이트입니다.</p>
+                    <p class="price">₩50,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/sub6.jpg" alt="디지털 체온계" class="product-image">
+                    <h3>디지털 체온계</h3>
+                    <p>아기의 체온을 정확하게 측정하는 체온계입니다.</p>
+                    <p class="price">₩15,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" class="product-image">
+                    <h3>To be Continued...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu4" class="product-section">
+            <h1>놀이용품</h1>
+            <p>아기의 발달을 돕는 놀이용품들입니다.</p>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/sub7.jpg" alt="아기 모빌" class="product-image">
+                    <h3>아기 모빌</h3>
+                    <p>아기의 시각과 청각 발달을 돕는 모빌입니다.</p>
+                    <p class="price">₩40,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/sub8.jpg" alt="놀이 매트" class="product-image">
+                    <h3>발달 촉진 매트</h3>
+                    <p>아기가 촉감 자극 놀이를 할 수 있는 매트입니다.</p>
+                    <p class="price">₩60,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" class="product-image">
+                    <h3>To be Continued...</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu5" class="product-section">
+            <h1>부모용품</h1>
+            <p>부모님을 위한 편리한 육아용품입니다.</p>
+
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="images/sub9.jpg" alt="유축기" class="product-image">
+                    <h3>유축기</h3>
+                    <p>모유 수유를 돕는 유축기입니다.</p>
+                    <p class="price">₩120,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="images/sub10.jpg" alt="수유 쿠션" class="product-image">
+                    <h3>수유 쿠션</h3>
+                    <p>편안하게 수유를 돕는 수유 쿠션입니다.</p>
+                    <p class="price">₩40,000</p>
+                    <a href="https://link.coupang.com/re/AffiliateLink?~p=your_unique_partner_code&c=your_product_link" target="_blank" class="btn">구매하기</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://via.placeholder.com/200" class="product-image">
+                    <h3>To be Continued...</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 육아한입. 모든 권리 보유.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function scrollToCategory(category) {
+            const element = document.getElementById(category);
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
